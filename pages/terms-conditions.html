@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions - ImgNinja</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <!-- Add Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon-imgNinja.png" type="image/png">
+  <style>
+    /* Terms & Conditions Page Styles */
+    .container {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    /* Hero Section Enhancement */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--text-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      line-height: 1.8;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 30%, var(--card-highlight) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    /* Main Content Container */
+    .page-content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      background-color: var(--secondary-color);
+      background-image: var(--card-gradient);
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .page-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 10% 90%, var(--card-highlight) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .toc-title {
+      font-size: 1.3rem;
+      color: var(--highlight-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-item {
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .toc-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: var(--highlight-color);
+      border-radius: 50%;
+    }
+
+    .toc-link {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .toc-link:hover, .toc-link.active {
+      color: var(--highlight-color);
+      transform: translateX(5px);
+    }
+
+    .toc-link.active::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--highlight-color);
+      border-radius: 50%;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Section Styling */
+    .terms-section {
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      padding: 25px;
+      border-radius: 10px;
+      background-color: rgba(20, 20, 20, 0.3);
+      border-left: 3px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+
+    .terms-section:hover {
+      background-color: rgba(20, 20, 20, 0.5);
+      border-left-color: var(--highlight-color);
+      transform: translateX(5px);
+    }
+
+    .terms-section.highlight {
+      animation: highlight-pulse 1.5s ease-in-out;
+    }
+
+    @keyframes highlight-pulse {
+      0% { background-color: rgba(20, 20, 20, 0.3); }
+      50% { background-color: rgba(var(--highlight-color-rgb, 255, 255, 255), 0.15); }
+      100% { background-color: rgba(20, 20, 20, 0.3); }
+    }
+
+    .page-content h2 {
+      color: var(--highlight-color);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-content h2 i {
+      font-size: 1.5rem;
+    }
+
+    .page-content h3 {
+      color: var(--text-color);
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--accent-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content ul, .page-content ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: var(--accent-light);
+      position: relative;
+    }
+
+    .page-content li::marker {
+      color: var(--highlight-color);
+    }
+
+    .page-content a {
+      color: var(--highlight-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px dotted var(--highlight-color);
+      padding-bottom: 2px;
+    }
+
+    .page-content a:hover {
+      border-bottom: 1px solid var(--highlight-color);
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      border-left: 4px solid var(--highlight-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--highlight-color);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    /* Definition Lists */
+    .definition-list {
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .definition-list dt {
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .definition-list dd {
+      margin-left: 20px;
+      margin-bottom: 15px;
+      color: var(--accent-light);
+      line-height: 1.7;
+    }
+
+    /* Last Updated Section */
+    .last-updated-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: var(--accent-light);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--highlight-color);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      border-bottom: none;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      border-bottom: none;
+    }
+
+    /* Print Button */
+    .print-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .print-button:hover {
+      background-color: var(--highlight-color);
+      color: black;
+      transform: translateY(-2px);
+    }
+
+
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .terms-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .terms-section:nth-child(1) { animation-delay: 0.1s; }
+    .terms-section:nth-child(2) { animation-delay: 0.2s; }
+    .terms-section:nth-child(3) { animation-delay: 0.3s; }
+    .terms-section:nth-child(4) { animation-delay: 0.4s; }
+    .terms-section:nth-child(5) { animation-delay: 0.5s; }
+    .terms-section:nth-child(6) { animation-delay: 0.6s; }
+    .terms-section:nth-child(7) { animation-delay: 0.7s; }
+    .terms-section:nth-child(8) { animation-delay: 0.8s; }
+    .terms-section:nth-child(9) { animation-delay: 0.9s; }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+      .page-content {
+        padding: 25px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .terms-section {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        max-width: 95%;
+      }
+
+      .page-content {
+        padding: 20px 15px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.4rem;
+      }
+
+      .page-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .last-updated-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .footer-logo span {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      nav, footer, .hero-section::before, .page-content::before,
+      .back-to-top, .print-button, .floating-nav {
+        display: none;
+      }
+
+      .page-content {
+        box-shadow: none;
+        padding: 0;
+        background: none;
+        border: none;
+      }
+
+      .terms-section {
+        page-break-inside: avoid;
+        background: none;
+        border-left: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .highlight-box {
+        border: 1px solid #ccc;
+        background: none;
+      }
+
+      h1, h2, h3, p, li {
+        color: black;
+      }
+
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="170" height="90">
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+      <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>Terms & Conditions</h1>
+      <p>Please read these terms carefully before using our service</p>
+    </div>
+
+
+
+    <div class="page-content">
+      <!-- Introduction -->
+      <div class="highlight-box">
+        <h3><i class="fas fa-file-contract"></i> Legal Agreement</h3>
+        <p>Welcome to ImgNinja. By accessing or using our website and services, you agree to be bound by these Terms and Conditions. These terms constitute a legally binding agreement between you and ImgNinja.</p>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="toc" id="toc">
+        <h3 class="toc-title"><i class="fas fa-list"></i> Table of Contents</h3>
+        <ul class="toc-list">
+          <li class="toc-item"><a href="#acceptance" class="toc-link">1. Acceptance of Terms</a></li>
+          <li class="toc-item"><a href="#service" class="toc-link">2. Description of Service</a></li>
+          <li class="toc-item"><a href="#responsibilities" class="toc-link">3. User Responsibilities</a></li>
+          <li class="toc-item"><a href="#intellectual-property" class="toc-link">4. Intellectual Property</a></li>
+          <li class="toc-item"><a href="#user-content" class="toc-link">5. User Content</a></li>
+          <li class="toc-item"><a href="#liability" class="toc-link">6. Limitation of Liability</a></li>
+          <li class="toc-item"><a href="#changes" class="toc-link">7. Changes to Terms</a></li>
+          <li class="toc-item"><a href="#governing-law" class="toc-link">8. Governing Law</a></li>
+          <li class="toc-item"><a href="#contact" class="toc-link">9. Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Print Button -->
+      <button class="print-button" id="printTerms">
+        <i class="fas fa-print"></i> Print Terms & Conditions
+      </button>
+
+      <!-- Acceptance of Terms Section -->
+      <div class="terms-section" id="acceptance">
+        <h2><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h2>
+        <p>By accessing or using ImgNinja, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. These terms apply to all visitors, users, and others who access or use our service.</p>
+        <p>If you do not agree to these terms, you must not access or use our service. By using any part of our service, you indicate your acceptance of these terms.</p>
+      </div>
+
+      <!-- Description of Service Section -->
+      <div class="terms-section" id="service">
+        <h2><i class="fas fa-server"></i> 2. Description of Service</h2>
+        <p>ImgNinja provides an online image compression service that allows users to reduce the file size of their images while maintaining reasonable quality. Key features of our service include:</p>
+        <ul>
+          <li><strong>Browser-Based Processing:</strong> The service operates entirely within your browser, and your images are not uploaded to our servers.</li>
+          <li><strong>Compression Options:</strong> Users can adjust compression levels to balance between file size and image quality.</li>
+          <li><strong>Multiple Format Support:</strong> Our service supports various image formats including JPG, PNG, JPEG, WEBP, and GIF.</li>
+          <li><strong>Dimension Adjustment:</strong> Users can resize images as part of the compression process.</li>
+        </ul>
+        <p>We reserve the right to modify, suspend, or discontinue any aspect of the service at any time without notice.</p>
+      </div>
+
+      <!-- User Responsibilities Section -->
+      <div class="terms-section" id="responsibilities">
+        <h2><i class="fas fa-user-shield"></i> 3. User Responsibilities</h2>
+        <p>When using our service, you agree to:</p>
+        <ul>
+          <li><strong>Legal Compliance:</strong> Comply with all applicable laws and regulations in your jurisdiction.</li>
+          <li><strong>Image Rights:</strong> Only compress images that you have the legal right to use, modify, and distribute.</li>
+          <li><strong>Prohibited Uses:</strong> Not use our service for any illegal, harmful, or unauthorized purpose.</li>
+          <li><strong>System Integrity:</strong> Not attempt to interfere with, disrupt, or gain unauthorized access to the service or its servers.</li>
+          <li><strong>Accurate Information:</strong> Provide accurate information when communicating with us or other users.</li>
+        </ul>
+        <p>Violation of these responsibilities may result in termination of your access to our service.</p>
+      </div>
+
+      <!-- Intellectual Property Section -->
+      <div class="terms-section" id="intellectual-property">
+        <h2><i class="fas fa-copyright"></i> 4. Intellectual Property</h2>
+        <p>All content on ImgNinja, including but not limited to text, graphics, logos, icons, images, software, code, and the compilation thereof, is the property of ImgNinja or its content suppliers and is protected by international copyright laws.</p>
+        <p>The trademarks, service marks, and logos contained on the website are owned by or licensed to ImgNinja. You are not permitted to use these marks without the prior written consent of ImgNinja or the respective owner.</p>
+        <p>You may not reproduce, duplicate, copy, sell, resell, or exploit any portion of the service without express written permission from ImgNinja.</p>
+      </div>
+
+      <!-- User Content Section -->
+      <div class="terms-section" id="user-content">
+        <h2><i class="fas fa-images"></i> 5. User Content</h2>
+        <p>You retain all rights to your images. Since our service operates entirely in your browser:</p>
+        <ul>
+          <li>We do not store your original or compressed images on our servers.</li>
+          <li>We do not access your images beyond what is necessary for the browser to process them.</li>
+          <li>We do not claim any ownership rights to the images you compress using our service.</li>
+          <li>You are solely responsible for the content of the images you compress using our service.</li>
+        </ul>
+        <p>By using our service, you represent and warrant that your images do not violate any third-party rights, including copyright, trademark, privacy, or other personal or proprietary rights.</p>
+      </div>
+
+      <!-- Limitation of Liability Section -->
+      <div class="terms-section" id="liability">
+        <h2><i class="fas fa-exclamation-triangle"></i> 6. Limitation of Liability</h2>
+        <p>ImgNinja provides the service on an "as is" and "as available" basis. We make no warranties, expressed or implied, regarding the reliability, availability, accuracy, or quality of our service.</p>
+        <p>To the maximum extent permitted by law, in no event shall ImgNinja, its directors, employees, partners, agents, suppliers, or affiliates be liable for any:</p>
+        <ul>
+          <li>Indirect, incidental, special, consequential, or punitive damages</li>
+          <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+          <li>Damages resulting from interruption of service or computer damage</li>
+          <li>Damages for personal or bodily injury</li>
+          <li>Any other damages of any kind, resulting from your access to or use of or inability to access or use the service</li>
+        </ul>
+        <p>Some jurisdictions do not allow the exclusion of certain warranties or the limitation or exclusion of liability for certain types of damages. Accordingly, some of the above limitations may not apply to you.</p>
+      </div>
+
+      <!-- Changes to Terms Section -->
+      <div class="terms-section" id="changes">
+        <h2><i class="fas fa-sync-alt"></i> 7. Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms and Conditions at any time at our sole discretion. When we make changes:</p>
+        <ul>
+          <li>We will post the updated Terms and Conditions on this page</li>
+          <li>We will update the "Last Updated" date at the bottom of this page</li>
+          <li>For significant changes, we may provide additional notice such as a prominent website announcement</li>
+        </ul>
+        <p>Your continued use of the service after any changes to the Terms and Conditions constitutes your acceptance of the new terms. We encourage you to review these Terms and Conditions periodically for any changes.</p>
+      </div>
+
+      <!-- Governing Law Section -->
+      <div class="terms-section" id="governing-law">
+        <h2><i class="fas fa-gavel"></i> 8. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+        <p>Any dispute arising from or relating to these Terms or your use of the service shall be subject to the exclusive jurisdiction of the courts in India.</p>
+        <p>If any provision of these Terms is held to be invalid or unenforceable, such provision shall be struck and the remaining provisions shall be enforced to the fullest extent under law.</p>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="terms-section" id="contact">
+        <h2><i class="fas fa-envelope"></i> 9. Contact Us</h2>
+        <p>If you have any questions, concerns, or feedback about these Terms and Conditions, please don't hesitate to contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:terms@imgninja.com">terms@imgninja.com</a></li>
+          <li><strong>Contact Form:</strong> Visit our <a href="contact-us.html">Contact page</a></li>
+        </ul>
+        <p>We are committed to addressing any questions or concerns you may have about our Terms and Conditions promptly and transparently.</p>
+      </div>
+
+      <!-- Last Updated Section -->
+      <div class="last-updated-container">
+        <div class="last-updated">
+          <i class="fas fa-calendar-alt"></i> Last Updated: May 7, 2025
+        </div>
+        <a href="#toc" class="back-to-top">
+          <i class="fas fa-arrow-up"></i> Back to Top
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1: Logo and About -->
+      <div class="footer-column">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
+        </a>
+        <p class="footer-description">
+          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Legal</h3>
+        <div class="footer-links">
+          <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+          <a href="dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
+          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Tools -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Tools</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
+          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
+          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
+          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <!-- Back to Top Script -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Scroll to the target element with smooth behavior
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for fixed header
+            behavior: 'smooth'
+          });
+
+          // Update URL hash without scrolling
+          history.pushState(null, null, targetId);
+
+          // Add highlight effect to the target section
+          targetElement.classList.add('highlight');
+          setTimeout(() => {
+            targetElement.classList.remove('highlight');
+          }, 1500);
+        }
+      });
+    });
+
+    // Print functionality
+    document.getElementById('printTerms').addEventListener('click', function() {
+      window.print();
+    });
+
+
+
+    // Highlight current section in table of contents based on scroll position
+    function highlightCurrentSection() {
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const scrollPosition = window.scrollY;
+
+      // Find the current section
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          const currentId = section.getAttribute('id');
+
+          // Remove active class from all links
+          tocLinks.forEach(link => {
+            link.classList.remove('active');
+          });
+
+          // Add active class to current link
+          const activeLink = document.querySelector(`.toc-link[href="#${currentId}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }
+
+    // Update active section on scroll
+    window.addEventListener('scroll', function() {
+      highlightCurrentSection();
+    });
+
+    // Add animation to sections when they come into view
+    function animateSections() {
+      const elementsToAnimate = document.querySelectorAll('.terms-section, .highlight-box, .toc');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elementsToAnimate.forEach(element => {
+        observer.observe(element);
+      });
+    }
+
+    // Initialize animations and active section when the page loads
+    window.addEventListener('load', () => {
+      animateSections();
+      highlightCurrentSection();
+
+      // Check if URL has a hash and scroll to that section
+      if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }, 500);
+        }
+      }
+    });
+
+    // Add parallax effect to hero section
+    function initParallax() {
+      const heroSection = document.querySelector('.hero-section');
+
+      window.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+
+        heroSection.style.backgroundPosition = `${moveX}px ${moveY}px`;
+      });
+    }
+
+    // Initialize parallax effect
+    initParallax();
+  </script>
+</body>
+</html>

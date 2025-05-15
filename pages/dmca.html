@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMCA Policy - ImgNinja</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <!-- Add Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon-imgNinja.png" type="image/png">
+  <style>
+    /* DMCA Page Styles */
+    :root {
+      --highlight-color-rgb: 255, 255, 255; /* RGB value for highlight color */
+    }
+
+    .container {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    /* Hero Section Enhancement */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--text-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      line-height: 1.8;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+      z-index: 1;
+    }
+
+    /* Page Content Styling */
+    .page-content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      background-color: var(--secondary-color);
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 30%, var(--card-highlight) 0%, transparent 60%);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Section Styling */
+    .dmca-section {
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(20, 20, 20, 0.3);
+      border-left: 3px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+
+    .dmca-section:hover {
+      background-color: rgba(20, 20, 20, 0.5);
+      border-left-color: var(--highlight-color);
+      transform: translateX(5px);
+    }
+
+    .dmca-section.highlight {
+      animation: highlight-pulse 1.5s ease-in-out;
+    }
+
+    @keyframes highlight-pulse {
+      0% { background-color: rgba(20, 20, 20, 0.3); }
+      50% { background-color: rgba(var(--highlight-color-rgb, 255, 255, 255), 0.15); }
+      100% { background-color: rgba(20, 20, 20, 0.3); }
+    }
+
+    .page-content h2 {
+      color: var(--highlight-color);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-content h2 i {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    .page-content h3 {
+      color: var(--text-color);
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .page-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .page-content ul, .page-content ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .page-content li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .page-content li::marker {
+      color: var(--highlight-color);
+    }
+
+    .page-content a {
+      color: var(--highlight-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .page-content a:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background-color: rgba(40, 40, 40, 0.3);
+      padding: 25px;
+      border-radius: 10px;
+      margin: 30px 0;
+      position: relative;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .highlight-box h3 {
+      color: var(--highlight-color) !important;
+      margin-top: 0 !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .highlight-box h3 i {
+      font-size: 1.5rem;
+    }
+
+    /* Contact Highlight Box */
+    .contact-highlight {
+      background-color: rgba(40, 40, 40, 0.3);
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid var(--highlight-color);
+      margin: 30px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-highlight:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-highlight h3 {
+      color: var(--highlight-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    .contact-highlight h3 i {
+      font-size: 1.5rem;
+    }
+
+    .contact-link {
+      color: var(--highlight-color) !important;
+      font-weight: 600;
+      text-decoration: underline !important;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      opacity: 0.8;
+      transform: translateY(-1px);
+    }
+
+    /* Table of Contents */
+    .toc {
+      background-color: rgba(30, 30, 30, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border: 1px solid var(--border-color);
+    }
+
+    .toc h3 {
+      margin-top: 0 !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 10px;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .toc a:hover {
+      transform: translateX(5px);
+    }
+
+    .toc a i {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* Print Button */
+    .print-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .print-button:hover {
+      background-color: var(--accent-light);
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: var(--accent-light);
+      font-size: 0.9rem;
+      margin-top: 40px;
+      text-align: right;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+      .page-content {
+        padding: 25px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        max-width: 95%;
+      }
+
+      .page-content {
+        padding: 20px 15px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .hero-section p {
+        font-size: 0.9rem;
+      }
+
+      .footer-logo span {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="170" height="90">
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+      <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>DMCA Policy</h1>
+      <p>Protecting intellectual property rights and addressing copyright concerns</p>
+    </div>
+
+    <div class="page-content">
+      <!-- Introduction -->
+      <div class="highlight-box">
+        <h3><i class="fas fa-shield-alt"></i> Copyright Protection</h3>
+        <p>At ImgNinja, we respect intellectual property rights and are committed to addressing copyright concerns promptly and effectively in accordance with the Digital Millennium Copyright Act (DMCA).</p>
+      </div>
+
+      <button id="printPolicy" class="print-button"><i class="fas fa-print"></i> Print Policy</button>
+
+      <!-- Table of Contents -->
+      <div class="toc">
+        <h3><i class="fas fa-list"></i> Quick Navigation</h3>
+        <ul>
+          <li><a href="#dmca-notice" class="toc-link"><i class="fas fa-angle-right"></i> DMCA Notice</a></li>
+          <li><a href="#infringement-notice" class="toc-link"><i class="fas fa-angle-right"></i> Filing an Infringement Notice</a></li>
+          <li><a href="#counter-notice" class="toc-link"><i class="fas fa-angle-right"></i> Counter-Notice Procedure</a></li>
+          <li><a href="#repeat-infringer" class="toc-link"><i class="fas fa-angle-right"></i> Repeat Infringer Policy</a></li>
+          <li><a href="#changes" class="toc-link"><i class="fas fa-angle-right"></i> Policy Changes</a></li>
+          <li><a href="#contact" class="toc-link"><i class="fas fa-angle-right"></i> Contact Information</a></li>
+        </ul>
+      </div>
+
+      <!-- DMCA Notice Section -->
+      <div class="dmca-section" id="dmca-notice">
+        <h2><i class="fas fa-gavel"></i> Digital Millennium Copyright Act (DMCA) Notice</h2>
+        <p>ImgNinja respects the intellectual property rights of others and expects its users to do the same. In accordance with the Digital Millennium Copyright Act of 1998 ("DMCA"), we will respond expeditiously to claims of copyright infringement that are reported to the designated copyright agent identified below.</p>
+      </div>
+
+      <!-- Infringement Notice Section -->
+      <div class="dmca-section" id="infringement-notice">
+        <h2><i class="fas fa-exclamation-circle"></i> DMCA Notice of Alleged Infringement</h2>
+        <p>If you believe that your copyrighted work has been copied in a way that constitutes copyright infringement and is accessible on this site, you may notify our copyright agent, as set forth in the DMCA. For your complaint to be valid under the DMCA, you must provide the following information when providing notice of the claimed copyright infringement:</p>
+
+        <ul>
+          <li>A physical or electronic signature of a person authorized to act on behalf of the copyright owner</li>
+          <li>Identification of the copyrighted work claimed to have been infringed</li>
+          <li>Identification of the material that is claimed to be infringing or to be the subject of the infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material</li>
+          <li>Information reasonably sufficient to permit us to contact the complaining party, such as an address, telephone number, and, if available, an electronic mail address at which the complaining party may be contacted</li>
+          <li>A statement that the complaining party has a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law</li>
+          <li>A statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed</li>
+        </ul>
+
+        <div class="contact-highlight">
+          <h3><i class="fas fa-envelope"></i> Submit DMCA Notices</h3>
+          <p>The fastest way to submit a DMCA notice is through our <a href="contact-us.html" class="contact-link">contact form</a>. Please include all required information as outlined above.</p>
+          <p>Alternatively, you can send your notice to:</p>
+          <p>Email: <a href="mailto:dmca@imgninja.com" class="contact-link">dmca@imgninja.com</a></p>
+        </div>
+      </div>
+
+      <!-- Counter-Notice Section -->
+      <div class="dmca-section" id="counter-notice">
+        <h2><i class="fas fa-reply"></i> Counter-Notice Procedure</h2>
+        <p>If you believe that your content that was removed (or to which access was disabled) is not infringing, or that you have the authorization from the copyright owner, the copyright owner's agent, or pursuant to the law, to post and use the material in your content, you may send a counter-notice containing the following information to the Designated Agent:</p>
+
+        <ul>
+          <li>Your physical or electronic signature</li>
+          <li>Identification of the content that has been removed or to which access has been disabled and the location at which the content appeared before it was removed or disabled</li>
+          <li>A statement that you have a good faith belief that the content was removed or disabled as a result of mistake or a misidentification of the content</li>
+          <li>Your name, address, telephone number, and email address, and a statement that you consent to the jurisdiction of the federal court in the district where you reside and that you will accept service of process from the person who provided notification of the alleged infringement</li>
+        </ul>
+
+        <p>If a counter-notice is received by the Designated Agent, we may send a copy of the counter-notice to the original complaining party informing that person that we may replace the removed content or cease disabling it in 10 business days. Unless the copyright owner files an action seeking a court order against the content provider, member, or user, the removed content may be replaced, or access to it restored, in 10 to 14 business days or more after receipt of the counter-notice, at our sole discretion.</p>
+      </div>
+
+      <!-- Repeat Infringer Section -->
+      <div class="dmca-section" id="repeat-infringer">
+        <h2><i class="fas fa-ban"></i> Repeat Infringer Policy</h2>
+        <p>In accordance with the DMCA and other applicable law, we have adopted a policy of terminating, in appropriate circumstances and at our sole discretion, users who are deemed to be repeat infringers. We may also at our sole discretion limit access to the Service and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.</p>
+      </div>
+
+      <!-- Changes Section -->
+      <div class="dmca-section" id="changes">
+        <h2><i class="fas fa-history"></i> Changes to Our DMCA Policy</h2>
+        <p>We reserve the right to modify this DMCA Policy at any time. If we make material changes to this policy, we will notify you by updating the date at the top of this policy and by maintaining a current version of the policy on our website.</p>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="dmca-section" id="contact">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <p>If you have any questions about our DMCA Policy, please contact us through our <a href="contact-us.html" class="contact-link">contact form</a>.</p>
+      </div>
+
+      <p class="last-updated">Last Updated: May 7, 2025</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1: Logo and About -->
+      <div class="footer-column">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
+        </a>
+        <p class="footer-description">
+          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Legal</h3>
+        <div class="footer-links">
+          <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+          <a href="dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
+          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Tools -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Tools</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
+          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
+          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
+          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <!-- Back to Top Script -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('.toc-link').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Scroll to the target element with smooth behavior
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for fixed header
+            behavior: 'smooth'
+          });
+
+          // Update URL hash without scrolling
+          history.pushState(null, null, targetId);
+
+          // Add highlight effect to the target section
+          targetElement.classList.add('highlight');
+          setTimeout(() => {
+            targetElement.classList.remove('highlight');
+          }, 1500);
+        }
+      });
+    });
+
+    // Print functionality
+    document.getElementById('printPolicy').addEventListener('click', function() {
+      window.print();
+    });
+
+    // Add animation to sections when they come into view
+    function animateSections() {
+      const sections = document.querySelectorAll('.dmca-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateX(-10px)';
+        section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(section);
+      });
+    }
+
+    // Run animations when page loads
+    window.addEventListener('load', function() {
+      animateSections();
+    });
+  </script>
+</body>
+</html>

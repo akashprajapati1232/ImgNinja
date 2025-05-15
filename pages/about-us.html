@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - ImgNinja</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/crop.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="icon" href="../assets/favicon-imgNinja.png" type="image/png">
+  <style>
+    /* About Us Page Styles */
+    .container {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    /* Hero Section Enhancement */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--text-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      line-height: 1.8;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 30%, var(--card-highlight) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    /* Main Content Container */
+    .page-content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      background-color: var(--secondary-color);
+      background-image: var(--card-gradient);
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .page-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 10% 90%, var(--card-highlight) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .page-content h2 {
+      color: var(--highlight-color);
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-content h2 i {
+      font-size: 1.8rem;
+    }
+
+    .page-content h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--highlight-color), transparent);
+      margin-left: 15px;
+    }
+
+    .page-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .page-content h3 {
+      color: var(--text-color);
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--accent-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content ul, .page-content ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: var(--accent-light);
+      position: relative;
+    }
+
+    .page-content li::marker {
+      color: var(--highlight-color);
+    }
+
+    /* Feature Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-card {
+      background-color: rgba(20, 20, 20, 0.7);
+      padding: 30px;
+      border-radius: 12px;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+      opacity: 0.7;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature-card i {
+      font-size: 3rem;
+      color: var(--highlight-color);
+      margin-bottom: 20px;
+      transition: all 0.4s ease;
+    }
+
+    .feature-card:hover i {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+
+    .feature-card p {
+      color: var(--accent-light);
+      font-size: 1rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(20, 20, 20, 0.5);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--highlight-color);
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--accent-light);
+    }
+
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+      z-index: 1;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--highlight-color), var(--accent-color));
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--highlight-color);
+      border: 4px solid var(--secondary-color);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+    }
+
+    .timeline-item:nth-child(odd)::after {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: -10px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-year {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--highlight-color);
+      margin-bottom: 10px;
+    }
+
+    .timeline-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    .timeline-text {
+      color: var(--accent-light);
+      line-height: 1.6;
+    }
+
+    /* Team Section */
+    .team-section {
+      margin-top: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .team-member-header {
+      height: 100px;
+      background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
+      position: relative;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--secondary-color);
+      position: relative;
+      margin-top: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    .team-member:hover img {
+      transform: scale(1.1);
+    }
+
+    .team-member-info {
+      padding: 70px 20px 30px;
+      margin-top: -60px;
+    }
+
+    .team-member h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    .team-member p.role {
+      color: var(--highlight-color);
+      font-size: 1rem;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .team-member p.bio {
+      color: var(--accent-light);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: var(--highlight-color);
+      transform: translateY(-3px);
+      color: black;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      margin: 60px 0 40px;
+      padding: 40px;
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--card-shadow);
+      z-index: 1;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 30% 30%, var(--card-highlight) 0%, transparent 60%),
+        radial-gradient(circle at 70% 70%, var(--card-highlight) 0%, transparent 60%);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    .cta-section h2 {
+      color: var(--text-color);
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .cta-section p {
+      color: var(--accent-light);
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: var(--highlight-color);
+      color: black;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .feature-card {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.2s; }
+    .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    .feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .team-member {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .team-member:nth-child(1) { animation-delay: 0.2s; }
+    .team-member:nth-child(2) { animation-delay: 0.3s; }
+    .team-member:nth-child(3) { animation-delay: 0.4s; }
+
+    .stat-item {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+    .stat-item:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+      .timeline::after {
+        left: 31px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+
+      .timeline-item::after {
+        left: 21px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+      .page-content {
+        padding: 25px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.7rem;
+      }
+
+      .feature-grid, .team-grid, .stats-section {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-section {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        max-width: 95%;
+      }
+
+      .page-content {
+        padding: 20px 15px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .page-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .timeline-item {
+        padding-left: 50px;
+      }
+
+      .timeline::after {
+        left: 21px;
+      }
+
+      .timeline-item::after {
+        left: 11px;
+      }
+
+      .footer-logo span {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="170" height="90">
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+      <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>About Us</h1>
+      <p>Welcome to ImgNinja, your go-to solution for efficient and high-quality image compression. We're dedicated to helping you optimize your images without sacrificing quality.</p>
+    </div>
+
+    <div class="page-content">
+      <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+      <p>At ImgNinja, our mission is to provide a simple, efficient, and secure way to compress images. We believe that everyone should have access to tools that make their digital life easier, which is why we've created a browser-based solution that respects your privacy and delivers exceptional results.</p>
+
+      <!-- Stats Section -->
+      <div class="stats-section">
+        <div class="stat-item">
+          <div class="stat-number">1M+</div>
+          <div class="stat-label">Images Compressed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50TB+</div>
+          <div class="stat-label">Storage Saved</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100K+</div>
+          <div class="stat-label">Happy Users</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Satisfaction Rate</div>
+        </div>
+      </div>
+
+      <h2><i class="fas fa-fingerprint"></i> What Makes Us Different</h2>
+      <p>Unlike many other image compression services, ImgNinja processes your images entirely within your browser. This means your data stays secure and the process is lightning fast.</p>
+
+      <ul>
+        <li><strong>Privacy-Focused:</strong> Your images never leave your device, ensuring complete privacy and security.</li>
+        <li><strong>Lightning Fast:</strong> No upload/download time means faster compression and a smoother experience.</li>
+        <li><strong>No Registration:</strong> Use our tool instantly without creating an account or sharing personal information.</li>
+        <li><strong>Free to Use:</strong> Access powerful compression technology without any cost or hidden fees.</li>
+        <li><strong>Quality Preservation:</strong> Our advanced algorithms maintain image quality while reducing file size.</li>
+      </ul>
+
+      <!-- Our Journey Timeline -->
+      <h2><i class="fas fa-history"></i> Our Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">Jan 2025</div>
+            <h3 class="timeline-title">The Beginning</h3>
+            <p class="timeline-text">ImgNinja started as a simple side project to solve our own image optimization needs.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">Mar 2025</div>
+            <h3 class="timeline-title">Public Launch</h3>
+            <p class="timeline-text">After months of development and testing, we launched our tool to the public with great reception.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">Apr 2025</div>
+            <h3 class="timeline-title">Major Upgrades</h3>
+            <p class="timeline-text">Implemented advanced compression algorithms and completely redesigned the user interface.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-year">May 2025</div>
+            <h3 class="timeline-title">Becoming ImgNinja</h3>
+            <p class="timeline-text">Rebranded to ImgNinja with enhanced features and improved performance.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2><i class="fas fa-rocket"></i> Our Features</h2>
+      <p>We've built ImgNinja with a focus on simplicity, efficiency, and quality. Here are some of the key features that make our tool stand out:</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-bolt"></i>
+          <h3>Fast Compression</h3>
+          <p>Compress your images in seconds with our optimized algorithms that run directly in your browser.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-lock"></i>
+          <h3>Privacy First</h3>
+          <p>Your images never leave your device, ensuring complete privacy and security for all your content.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-sliders-h"></i>
+          <h3>Customizable Settings</h3>
+          <p>Adjust compression levels, dimensions, and target file size to find the perfect balance for your needs.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-image"></i>
+          <h3>Multiple Formats</h3>
+          <p>Support for JPG, PNG, JPEG, WEBP, and GIF formats with optimal compression for each type.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-magic"></i>
+          <h3>Smart Algorithms</h3>
+          <p>Our intelligent compression technology preserves image quality while maximizing file size reduction.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Fully Responsive</h3>
+          <p>Use our tool on any device - desktop, tablet, or mobile - with a seamless experience across all platforms.</p>
+        </div>
+      </div>
+
+      <h2><i class="fas fa-users"></i> Meet Our Team</h2>
+      <p>ImgNinja is developed and maintained by a small team of passionate developers and designers who are committed to creating useful, user-friendly tools that make a difference.</p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="../assets/Team/akash-prajapati.jpg" alt="Akash Prajapati">
+          <div class="team-member-info">
+            <h3>Akash Prajapati</h3>
+            <p class="role">Founder & Lead Developer</p>
+            <p class="bio">Good experience in web development, Akash leads the technical direction and core development of Image Compressor Pro.</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/akash-prajapati-1432bh/" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/akashprajapati1232/" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.instagram.com/itz_prabhas43/" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <img src="../assets/Team/mohd-mursaleen.jpg" alt="Mohd Mursaleen">
+          <div class="team-member-info">
+            <h3>Mohd. Mursaleen</h3>
+            <p class="role">Frontend Developer</p>
+            <p class="bio">Mursaleen specializes in creating intuitive user interfaces and ensuring a smooth, responsive experience across all devices.</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/mohd-mursaleen-557a10296/" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Mursaleen03" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.instagram.com/mr_ishan_o3/" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <img src="../assets/Team/mohd-shuaib.jpg" alt="Mohd.Shuaib">
+          <div class="team-member-info">
+            <h3>Mohd. Shuaib</h3>
+            <p class="role">UI/UX Designer</p>
+            <p class="bio">Shuaib brings creative vision to the project, designing an interface that's both beautiful and functional for users of all skill levels.</p>
+            <div class="social-links">
+              <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.instagram.com/md_shuaib.11/" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action Section -->
+      <div class="cta-section">
+        <h2>Ready to Optimize Your Images?</h2>
+        <p>Experience the power of ImgNinja today. No registration required, no data collected, just fast and efficient image compression at your fingertips.</p>
+        <a href="../tools/img-compress.html" class="cta-button">Try It Now <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+      <p>Have questions, feedback, or suggestions? We'd love to hear from you! Our team is always looking for ways to improve and enhance your experience with ImgNinja.</p>
+      <p>Visit our <a href="contact-us.html">Contact page</a> to get in touch with our team or send us an email at <a href="mailto:info@imgninja.com">info@imgninja.com</a>.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1: Logo and About -->
+      <div class="footer-column">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
+        </a>
+        <p class="footer-description">
+          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Legal</h3>
+        <div class="footer-links">
+          <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+          <a href="dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
+          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Tools -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Tools</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
+          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
+          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
+          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <!-- Back to Top Script -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Animate timeline items when they come into view
+    function animateTimelineItems() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    }
+
+    // Animate stats with counting effect
+    function animateStats() {
+      const statNumbers = document.querySelectorAll('.stat-number');
+
+      statNumbers.forEach(stat => {
+        const targetValue = stat.textContent;
+        let suffix = '';
+
+        // Extract the numeric part and any suffix (like +, K, M, etc.)
+        let numericValue = targetValue.replace(/[^0-9.]/g, '');
+        if (targetValue.includes('+')) suffix = '+';
+        if (targetValue.includes('K')) suffix = 'K+';
+        if (targetValue.includes('M')) suffix = 'M+';
+        if (targetValue.includes('TB')) suffix = 'TB+';
+
+        // Start from zero
+        stat.textContent = '0';
+
+        // Animate to target value
+        let startValue = 0;
+        const endValue = parseFloat(numericValue);
+        const duration = 2000; // 2 seconds
+        const increment = endValue / (duration / 16); // Update every 16ms (60fps)
+
+        const counter = setInterval(() => {
+          startValue += increment;
+          if (startValue >= endValue) {
+            clearInterval(counter);
+            startValue = endValue;
+          }
+
+          // Format the number and add suffix
+          let displayValue;
+          if (endValue >= 1000) {
+            displayValue = Math.floor(startValue).toLocaleString();
+          } else if (Number.isInteger(endValue)) {
+            displayValue = Math.floor(startValue);
+          } else {
+            displayValue = startValue.toFixed(1);
+          }
+
+          stat.textContent = displayValue + suffix;
+        }, 16);
+      });
+    }
+
+    // Add parallax effect to hero section
+    function initParallax() {
+      const heroSection = document.querySelector('.hero-section');
+
+      window.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+
+        heroSection.style.backgroundPosition = `${moveX}px ${moveY}px`;
+      });
+    }
+
+    // Animate elements when they come into view
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.feature-card, .team-member, .stat-item, .cta-section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        observer.observe(element);
+      });
+    }
+
+    // Initialize all animations when the page loads
+    window.addEventListener('load', () => {
+      animateTimelineItems();
+      setTimeout(animateStats, 500); // Delay stats animation slightly
+      initParallax();
+      animateOnScroll();
+    });
+
+    // Reinitialize animations on window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        animateTimelineItems();
+        animateOnScroll();
+      }, 250);
+    });
+  </script>
+
+  <!-- App Scripts -->
+  <script src="../js/script.js"></script>
+  <script src="../js/crop.js"></script>
+</body>
+</html>

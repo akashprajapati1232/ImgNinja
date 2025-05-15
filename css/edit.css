@@ -1,0 +1,522 @@
+/* Edit Feature Styles */
+
+/* Edit Icon */
+.edit-icon-container {
+  position: absolute;
+  top: 10px;
+  right: 60px; /* Position next to crop icon */
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+}
+
+.edit-icon-container:hover {
+  transform: scale(1.1);
+  background-color: var(--accent-color);
+  opacity: 1;
+}
+
+.edit-icon {
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+
+/* Edit Modal */
+.edit-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow: auto;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.edit-modal-content {
+  position: relative;
+  background-color: var(--secondary-color);
+  background-image: var(--modern-gradient);
+  margin: 5% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 15px;
+  box-shadow: var(--card-shadow), var(--subtle-glow);
+  border: var(--modern-border);
+  animation: slideUp 0.4s ease;
+}
+
+.edit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edit-modal-title {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-modal-title i {
+  color: var(--highlight-color);
+}
+
+.edit-close {
+  font-size: 1.5rem;
+  color: var(--accent-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.edit-close:hover {
+  color: var(--highlight-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.edit-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: #000;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.edit-img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+/* Edit Tabs */
+.edit-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.edit-tab {
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-tab:hover {
+  background-color: var(--accent-color);
+}
+
+.edit-tab.active {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Edit Controls */
+.edit-controls {
+  margin-bottom: 20px;
+}
+
+.edit-panel {
+  display: none;
+}
+
+.edit-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.edit-control-group {
+  margin-bottom: 15px;
+}
+
+.edit-control-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Sliders */
+.edit-slider-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.edit-slider-label {
+  width: 120px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  padding-top: 8px;
+}
+
+.edit-slider-controls {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+}
+
+.edit-slider-track {
+  position: relative;
+  height: 16px; /* Increased height for better touch target */
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 5px 0; /* Added margin for better spacing */
+}
+
+.edit-slider-fill {
+  position: absolute;
+  height: 100%;
+  background-color: var(--highlight-color);
+  border-radius: 5px;
+  width: 50%;
+  transition: width 0.15s ease-out;
+}
+
+.edit-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.15s ease-out;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation; /* Prevents zooming on mobile */
+  background: transparent; /* Ensures the track is transparent */
+}
+
+/* Custom slider thumb for better mobile experience */
+.edit-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.edit-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--highlight-color);
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.edit-slider:active::-webkit-slider-thumb,
+.edit-slider:active::-moz-range-thumb {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.edit-slider-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-slider-reset {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  margin-right: 5px;
+  -webkit-tap-highlight-color: transparent; /* Removes tap highlight on mobile */
+}
+
+.edit-slider-reset:hover {
+  background-color: var(--accent-light);
+  transform: rotate(-30deg);
+}
+
+.edit-slider-reset:active {
+  transform: scale(0.9) rotate(-60deg);
+}
+
+.edit-slider-reset.resetting {
+  animation: reset-spin 0.5s ease;
+}
+
+@keyframes reset-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.edit-slider-input {
+  width: 70px;
+  background:  rgba(6, 6, 6, 0.7);
+  border: 1px solid white;
+  color: var(--text-color);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  -webkit-appearance: none; /* Removes default styling on iOS */
+  appearance: none;
+}
+
+.edit-slider-input:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.edit-slider-input:hover {
+  border-color: var(--highlight-color);
+}
+
+/* Hide spinner buttons on number inputs */
+.edit-slider-input::-webkit-inner-spin-button,
+.edit-slider-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.edit-slider-input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Standard */
+}
+
+/* Buttons for rotate/flip */
+.edit-button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edit-button {
+  padding: 10px 15px;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-button:hover {
+  background-color: var(--accent-light);
+  transform: scale(1.05);
+}
+
+.edit-button.active {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+}
+
+/* Frame controls */
+.frame-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.frame-option {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.frame-option:hover {
+  transform: scale(1.05);
+}
+
+.frame-option.active {
+  border-color: var(--highlight-color);
+}
+
+.frame-preview {
+  height: 60px;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/* Action buttons */
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.edit-action-btn {
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.edit-cancel-btn {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.edit-cancel-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.edit-apply-btn {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.edit-apply-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .edit-modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .edit-container {
+    height: 300px;
+  }
+
+  .edit-tabs {
+    gap: 5px;
+  }
+
+  .edit-tab {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .edit-slider-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .edit-slider-label {
+    width: 100%;
+    padding-top: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .edit-slider-controls {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .edit-slider-track {
+    width: 100%;
+    height: 20px; /* Even larger for mobile touch */
+    border-radius: 10px;
+    margin: 8px 0;
+  }
+
+  /* Larger thumb for mobile */
+  .edit-slider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .edit-slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+  }
+
+  .edit-slider-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .edit-slider-reset {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+  }
+
+  .edit-slider-input {
+    width: 80px;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAGE_TITLE - ImgNinja</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <!-- Add Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .page-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: left;
+      background-color: var(--secondary-color);
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+    }
+
+    .page-content h2 {
+      color: var(--highlight-color);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .page-content h3 {
+      color: var(--text-color);
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .page-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .page-content ul, .page-content ol {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .page-content li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .page-content a {
+      color: var(--highlight-color);
+      text-decoration: none;
+    }
+
+    .page-content a:hover {
+      text-decoration: underline;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: var(--accent-light);
+      font-size: 0.9rem;
+      margin-top: 40px;
+      text-align: right;
+    }
+    @media (max-width: 320px){
+      .container{
+        width: 100%;
+      }
+      .footer-logo span {
+    font-size: 0.9rem;
+  }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo.svg" alt="ImgNinja Logo" width="170" height="90">
+        <span class="logo-text">ImgNinja</span>
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="#"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../tools/pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>PAGE_TITLE</h1>
+    </div>
+
+    <div class="page-content">
+      <!-- PAGE CONTENT GOES HERE -->
+
+      <p class="last-updated">Last Updated: May 7, 2025</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <a href="../index.html" class="footer-logo">
+        <img src="../assets/logo.svg" alt="ImgNinja Logo" width="200" height="110">
+        <span class="logo-text">ImgNinja</span>
+      </a>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="dmca.html">DMCA</a>
+        <a href="about-us.html">About Us</a>
+      </div>
+      <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

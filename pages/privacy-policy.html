@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - ImgNinja</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" href="../assets/favicon-imgNinja.png" type="image/png">
+  <style>
+    .container {
+      width: 80%;
+      max-width: 80%;
+    }
+
+    /* Hero Section Enhancement */
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 20px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 2;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--text-color), var(--highlight-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: var(--accent-light);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      line-height: 1.8;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 30%, var(--card-highlight) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    /* Main Content Container */
+    .page-content {
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: left;
+      background-color: var(--secondary-color);
+      background-image: var(--card-gradient);
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .page-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 10% 90%, var(--card-highlight) 0%, transparent 40%),
+        radial-gradient(circle at 90% 10%, var(--card-highlight) 0%, transparent 40%);
+      opacity: 0.5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .toc-title {
+      font-size: 1.3rem;
+      color: var(--highlight-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toc-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px 20px;
+    }
+
+    .toc-item {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .toc-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: var(--highlight-color);
+      border-radius: 50%;
+    }
+
+    .toc-link {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .toc-link:hover, .toc-link.active {
+      color: var(--highlight-color);
+      transform: translateX(5px);
+    }
+
+    .toc-link.active::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--highlight-color);
+      border-radius: 50%;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Section Styling */
+    .policy-section {
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(20, 20, 20, 0.3);
+      border-left: 3px solid var(--accent-color);
+      transition: all 0.3s ease;
+    }
+
+    .policy-section:hover {
+      background-color: rgba(20, 20, 20, 0.5);
+      border-left-color: var(--highlight-color);
+      transform: translateX(5px);
+    }
+
+    .policy-section.highlight {
+      animation: highlight-pulse 1.5s ease-in-out;
+    }
+
+    @keyframes highlight-pulse {
+      0% { background-color: rgba(20, 20, 20, 0.3); }
+      50% { background-color: rgba(var(--highlight-color-rgb, 255, 255, 255), 0.15); }
+      100% { background-color: rgba(20, 20, 20, 0.3); }
+    }
+
+    .page-content h2 {
+      color: var(--highlight-color);
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .page-content h2 i {
+      font-size: 1.5rem;
+    }
+
+    .page-content h3 {
+      color: var(--text-color);
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--accent-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content ul, .page-content ol {
+      margin-bottom: 25px;
+      padding-left: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-content li {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: var(--accent-light);
+      position: relative;
+    }
+
+    .page-content li::marker {
+      color: var(--highlight-color);
+    }
+
+    .page-content a {
+      color: var(--highlight-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border-bottom: 1px dotted var(--highlight-color);
+      padding-bottom: 2px;
+    }
+
+    .page-content a:hover {
+      border-bottom: 1px solid var(--highlight-color);
+    }
+
+    /* Highlight Boxes */
+    .highlight-box {
+      background-color: rgba(20, 20, 20, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 25px 0;
+      border-left: 4px solid var(--highlight-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight-box h3 {
+      margin-top: 0;
+      color: var(--highlight-color);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+    }
+
+    /* Last Updated Section */
+    .last-updated-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      position: relative;
+      z-index: 1;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: var(--accent-light);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--highlight-color);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Print Button */
+    .print-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    .print-button:hover {
+      background-color: var(--highlight-color);
+      color: black;
+      transform: translateY(-2px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    .policy-section {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .policy-section:nth-child(1) { animation-delay: 0.1s; }
+    .policy-section:nth-child(2) { animation-delay: 0.2s; }
+    .policy-section:nth-child(3) { animation-delay: 0.3s; }
+    .policy-section:nth-child(4) { animation-delay: 0.4s; }
+    .policy-section:nth-child(5) { animation-delay: 0.5s; }
+    .policy-section:nth-child(6) { animation-delay: 0.6s; }
+    .policy-section:nth-child(7) { animation-delay: 0.7s; }
+    .policy-section:nth-child(8) { animation-delay: 0.8s; }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        max-width: 90%;
+      }
+
+      .page-content {
+        padding: 25px;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.6rem;
+      }
+
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-section {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 95%;
+        max-width: 95%;
+      }
+
+      .page-content {
+        padding: 20px 15px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .page-content h2 {
+        font-size: 1.4rem;
+      }
+
+      .page-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .last-updated-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .footer-logo span {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      nav, footer, .hero-section::before, .page-content::before,
+      .back-to-top, .print-button {
+        display: none;
+      }
+
+      .page-content {
+        box-shadow: none;
+        padding: 0;
+        background: none;
+        border: none;
+      }
+
+      .policy-section {
+        page-break-inside: avoid;
+        background: none;
+        border-left: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .highlight-box {
+        border: 1px solid #ccc;
+        background: none;
+      }
+
+      h1, h2, h3, p, li {
+        color: black;
+      }
+
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="170" height="90">
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+      <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>Privacy Policy</h1>
+      <p>We value your privacy and are committed to protecting your personal information</p>
+    </div>
+
+    <div class="page-content">
+      <!-- Introduction -->
+      <div class="highlight-box">
+        <h3><i class="fas fa-shield-alt"></i> Our Privacy Commitment</h3>
+        <p>At Image Compressor Pro, we prioritize your privacy and data security. Our service is designed to process images entirely within your browser, ensuring your files never leave your device.</p>
+      </div>
+
+      <p>This Privacy Policy explains how we collect, use, and safeguard your data when you use our image compression service. We've designed this document to be as clear and transparent as possible.</p>
+
+      <!-- Table of Contents -->
+      <div class="toc" id="toc">
+        <h3 class="toc-title"><i class="fas fa-list"></i> Table of Contents</h3>
+        <ul class="toc-list">
+          <li class="toc-item"><a href="#information-we-collect" class="toc-link">Information We Collect</a></li>
+          <li class="toc-item"><a href="#usage-data" class="toc-link">Usage Data</a></li>
+          <li class="toc-item"><a href="#cookies" class="toc-link">Cookies</a></li>
+          <li class="toc-item"><a href="#third-party-services" class="toc-link">Third-Party Services</a></li>
+          <li class="toc-item"><a href="#data-security" class="toc-link">Data Security</a></li>
+          <li class="toc-item"><a href="#childrens-privacy" class="toc-link">Children's Privacy</a></li>
+          <li class="toc-item"><a href="#changes" class="toc-link">Changes to This Policy</a></li>
+          <li class="toc-item"><a href="#contact-us" class="toc-link">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Print Button -->
+      <button class="print-button" id="printPolicy">
+        <i class="fas fa-print"></i> Print Privacy Policy
+      </button>
+
+      <!-- Information We Collect Section -->
+      <div class="policy-section" id="information-we-collect">
+        <h2><i class="fas fa-database"></i> Information We Collect</h2>
+        <p>Our image compression service operates entirely within your browser. This means:</p>
+        <ul>
+          <li><strong>Your images never leave your device</strong> - All compression processing happens locally in your browser, ensuring complete privacy.</li>
+          <li><strong>We do not store your images</strong> - Your original or compressed images are not uploaded to our servers at any point in the process.</li>
+          <li><strong>No personal data collection</strong> - We do not collect personally identifiable information through our compression service.</li>
+        </ul>
+      </div>
+
+      <!-- Usage Data Section -->
+      <div class="policy-section" id="usage-data">
+        <h2><i class="fas fa-chart-bar"></i> Usage Data</h2>
+        <p>To improve our service and understand how users interact with our website, we may collect anonymous usage data, including:</p>
+        <ul>
+          <li><strong>Browser information</strong> - Type and version of your web browser</li>
+          <li><strong>Operating system</strong> - The OS you're using to access our service</li>
+          <li><strong>Session data</strong> - Time spent on the website and pages visited</li>
+          <li><strong>Compression statistics</strong> - Anonymous data about compression usage (e.g., average compression ratio)</li>
+          <li><strong>Referral source</strong> - How you found our website</li>
+        </ul>
+        <p>This information is collected using cookies and similar tracking technologies and is used solely for improving our service.</p>
+      </div>
+
+      <!-- Cookies Section -->
+      <div class="policy-section" id="cookies">
+        <h2><i class="fas fa-cookie-bite"></i> Cookies</h2>
+        <p>We use cookies to enhance your experience on our website. Cookies are small text files stored on your device that help us:</p>
+        <ul>
+          <li>Remember your preferences and settings</li>
+          <li>Understand how you use our website</li>
+          <li>Improve our service based on usage patterns</li>
+          <li>Provide a more personalized experience</li>
+        </ul>
+        <p>You can control cookies through your browser settings. Most browsers allow you to block or delete cookies, but doing so may impact your experience on our website.</p>
+      </div>
+
+      <!-- Third-Party Services Section -->
+      <div class="policy-section" id="third-party-services">
+        <h2><i class="fas fa-handshake"></i> Third-Party Services</h2>
+        <p>We may use third-party analytics services (such as Google Analytics) to help us understand how users interact with our website. These services may collect information about your use of our website, including:</p>
+        <ul>
+          <li>Pages you visit on our website</li>
+          <li>Time spent on each page</li>
+          <li>Technical information about your device and browser</li>
+          <li>Geographic location (country or city level)</li>
+        </ul>
+        <p>These third-party services have their own privacy policies governing how they use such information. We encourage you to review their privacy policies for more information.</p>
+      </div>
+
+      <!-- Data Security Section -->
+      <div class="policy-section" id="data-security">
+        <h2><i class="fas fa-lock"></i> Data Security</h2>
+        <p>We implement appropriate security measures to protect against unauthorized access, alteration, disclosure, or destruction of your information. Our security measures include:</p>
+        <ul>
+          <li>Using HTTPS encryption for all data transmission</li>
+          <li>Regular security assessments of our website</li>
+          <li>Limited access to user data among our team</li>
+          <li>Continuous monitoring for potential vulnerabilities</li>
+        </ul>
+        <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.</p>
+      </div>
+
+      <!-- Children's Privacy Section -->
+      <div class="policy-section" id="childrens-privacy">
+        <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+        <p>Our service is not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+      </div>
+
+      <!-- Changes to This Privacy Policy Section -->
+      <div class="policy-section" id="changes">
+        <h2><i class="fas fa-history"></i> Changes to This Privacy Policy</h2>
+        <p>We may update our Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. When we make changes:</p>
+        <ul>
+          <li>We will post the new Privacy Policy on this page</li>
+          <li>We will update the "Last Updated" date at the bottom of this page</li>
+          <li>For significant changes, we may also provide a more prominent notice</li>
+        </ul>
+        <p>We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.</p>
+      </div>
+
+      <!-- Contact Us Section -->
+      <div class="policy-section" id="contact-us">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <p>If you have any questions, concerns, or feedback about this Privacy Policy or our privacy practices, please don't hesitate to contact us:</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:privacy@imgninja.com">privacy@imgninja.com</a></li>
+          <li><strong>Contact Form:</strong> Visit our <a href="contact-us.html">Contact page</a></li>
+        </ul>
+        <p>We are committed to addressing any questions or concerns you may have about our privacy practices promptly and transparently.</p>
+      </div>
+
+      <!-- Last Updated Section -->
+      <div class="last-updated-container">
+        <div class="last-updated">
+          <i class="fas fa-calendar-alt"></i> Last Updated: May 7, 2025
+        </div>
+        <a href="#toc" class="back-to-top">
+          <i class="fas fa-arrow-up"></i> Back to Top
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1: Logo and About -->
+      <div class="footer-column">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
+        </a>
+        <p class="footer-description">
+          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Legal</h3>
+        <div class="footer-links">
+          <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+          <a href="dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
+          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Tools -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Tools</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
+          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
+          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
+          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <!-- Back to Top Script -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          // Scroll to the target element with smooth behavior
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for fixed header
+            behavior: 'smooth'
+          });
+
+          // Update URL hash without scrolling
+          history.pushState(null, null, targetId);
+
+          // Add highlight effect to the target section
+          targetElement.classList.add('highlight');
+          setTimeout(() => {
+            targetElement.classList.remove('highlight');
+          }, 1500);
+        }
+      });
+    });
+
+    // Print functionality
+    document.getElementById('printPolicy').addEventListener('click', function() {
+      window.print();
+    });
+
+    // Highlight current section based on scroll position
+    function highlightCurrentSection() {
+      const sections = document.querySelectorAll('.policy-section');
+      const tocLinks = document.querySelectorAll('.toc-link');
+
+      // Get current scroll position
+      const scrollPosition = window.scrollY;
+
+      // Find the current section
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          const currentId = section.getAttribute('id');
+
+          // Remove active class from all links
+          tocLinks.forEach(link => {
+            link.classList.remove('active');
+          });
+
+          // Add active class to current link
+          const activeLink = document.querySelector(`.toc-link[href="#${currentId}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }
+
+    // Add active class to TOC links when scrolling
+    window.addEventListener('scroll', function() {
+      highlightCurrentSection();
+    });
+
+    // Add animation to policy sections when they come into view
+    function animateSections() {
+      const sections = document.querySelectorAll('.policy-section, .highlight-box, .toc');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    // Initialize animations when the page loads
+    window.addEventListener('load', () => {
+      animateSections();
+      highlightCurrentSection();
+
+      // Check if URL has a hash and scroll to that section
+      if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+          setTimeout(() => {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }, 500);
+        }
+      }
+    });
+
+    // Add parallax effect to hero section
+    function initParallax() {
+      const heroSection = document.querySelector('.hero-section');
+
+      window.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+
+        heroSection.style.backgroundPosition = `${moveX}px ${moveY}px`;
+      });
+    }
+
+    // Initialize parallax effect
+    initParallax();
+  </script>
+</body>
+</html>

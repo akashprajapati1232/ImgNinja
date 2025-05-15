@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Image Compression Tips & Tutorials | ImgNinja</title>
+  <meta name="description" content="Discover the latest image compression techniques, tips, and tutorials to optimize your images for web and mobile applications.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://imgninja.com/blog/">
+  <meta property="og:title" content="Blog - Image Compression Tips & Tutorials | ImgNinja">
+  <meta property="og:description" content="Discover the latest image compression techniques, tips, and tutorials to optimize your images for web and mobile applications.">
+  <meta property="og:image" content="https://imgninja.com/assets/blog-cover.jpg">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://imgninja.com/blog/">
+  <meta property="twitter:title" content="Blog - Image Compression Tips & Tutorials | ImgNinja">
+  <meta property="twitter:description" content="Discover the latest image compression techniques, tips, and tutorials to optimize your images for web and mobile applications.">
+  <meta property="twitter:image" content="https://imgninja.com/assets/blog-cover.jpg">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://imgninja.com/blog/">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <!-- Add Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/favicon-imgNinja.png" type="image/png">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="170" height="90">
+      </a>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
+      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
+      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
+      <li><a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="hero-section">
+      <h1>ImgNinja Blog</h1>
+      <p class="subtitle">Expert tips, tutorials, and insights on image optimization</p>
+    </div>
+
+    <div class="blog-filters">
+      <div class="search-container">
+        <input type="text" id="blog-search" placeholder="Search articles...">
+        <button id="search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="category-filters">
+        <button class="category-filter active" data-category="all">All</button>
+        <button class="category-filter" data-category="tutorials">Tutorials</button>
+        <button class="category-filter" data-category="tips">Tips & Tricks</button>
+        <button class="category-filter" data-category="guides">Guides</button>
+        <button class="category-filter" data-category="news">News</button>
+      </div>
+    </div>
+
+    <div class="featured-post">
+      <div class="featured-post-image">
+        <img src="../assets/blog/webp-vs-jpg-png.jpg" alt="WebP vs JPG vs PNG: Which Image Format Is Best?" width="800" height="450">
+        <div class="featured-badge">Featured</div>
+      </div>
+      <div class="featured-post-content">
+        <div class="blog-category">Guides</div>
+        <h2>WebP vs JPG vs PNG: Which Image Format Is Best?</h2>
+        <p class="featured-excerpt">Discover the pros and cons of different image formats and learn which one is best for your specific use case. This comprehensive guide covers compression ratios, quality, browser support, and more.</p>
+        <div class="blog-meta">
+          <span class="blog-date"><i class="far fa-calendar-alt"></i> May 15, 2025</span>
+          <span class="blog-reading-time"><i class="far fa-clock"></i> 8 min read</span>
+        </div>
+        <a href="posts/webp-vs-jpg-png.html" class="read-more-btn">Read Article <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-posts-container">
+      <!-- Blog posts will be loaded here -->
+      <div class="blog-card" data-category="tutorials">
+        <a href="posts/optimize-images-for-web.html" class="blog-card-image">
+          <img src="../assets/blog/optimize-images-for-web.jpg" alt="How to Optimize Images for Web Without Losing Quality" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">Tutorials</div>
+          <h3><a href="posts/optimize-images-for-web.html">How to Optimize Images for Web Without Losing Quality</a></h3>
+          <p class="blog-excerpt">Learn the best techniques to reduce image file sizes while maintaining visual quality for faster website loading times.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> May 10, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="tips">
+        <a href="posts/image-seo-best-practices.html" class="blog-card-image">
+          <img src="../assets/blog/image-seo-best-practices.jpg" alt="Image SEO Best Practices for Better Rankings" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">Tips & Tricks</div>
+          <h3><a href="posts/image-seo-best-practices.html">Image SEO Best Practices for Better Rankings</a></h3>
+          <p class="blog-excerpt">Boost your website's SEO with these essential image optimization techniques that search engines love.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> May 5, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 7 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="guides">
+        <a href="posts/heic-to-jpg-conversion.html" class="blog-card-image">
+          <img src="../assets/blog/heic-to-jpg-conversion.jpg" alt="HEIC to JPG: How to Convert and Compress iPhone Photos" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">Guides</div>
+          <h3><a href="posts/heic-to-jpg-conversion.html">HEIC to JPG: How to Convert and Compress iPhone Photos</a></h3>
+          <p class="blog-excerpt">A complete guide to converting HEIC images from your iPhone to more compatible JPG format while optimizing file size.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 28, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="news">
+        <a href="posts/next-gen-image-formats.html" class="blog-card-image">
+          <img src="../assets/blog/next-gen-image-formats.jpg" alt="Next-Gen Image Formats: AVIF and WebP 2" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">News</div>
+          <h3><a href="posts/next-gen-image-formats.html">Next-Gen Image Formats: AVIF and WebP 2</a></h3>
+          <p class="blog-excerpt">Explore the latest advancements in image compression technology with AVIF and WebP 2 formats.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 20, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 4 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="tutorials">
+        <a href="posts/batch-image-compression.html" class="blog-card-image">
+          <img src="../assets/blog/batch-image-compression.jpg" alt="How to Batch Compress Multiple Images at Once" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">Tutorials</div>
+          <h3><a href="posts/batch-image-compression.html">How to Batch Compress Multiple Images at Once</a></h3>
+          <p class="blog-excerpt">Save time by learning how to compress multiple images simultaneously while maintaining quality control.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 15, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card" data-category="tips">
+        <a href="posts/image-compression-ecommerce.html" class="blog-card-image">
+          <img src="../assets/blog/image-compression-ecommerce.jpg" alt="Image Compression for E-commerce: Boost Your Store's Performance" width="400" height="225">
+        </a>
+        <div class="blog-card-content">
+          <div class="blog-category">Tips & Tricks</div>
+          <h3><a href="posts/image-compression-ecommerce.html">Image Compression for E-commerce: Boost Your Store's Performance</a></h3>
+          <p class="blog-excerpt">Learn how proper image optimization can increase conversions and improve user experience on your online store.</p>
+          <div class="blog-meta">
+            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 8, 2025</span>
+            <span class="blog-reading-time"><i class="far fa-clock"></i> 6 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button class="pagination-btn active">1</button>
+      <button class="pagination-btn">2</button>
+      <button class="pagination-btn">3</button>
+      <button class="pagination-btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <div class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Get the latest image optimization tips and tutorials delivered straight to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <!-- Column 1: Logo and About -->
+      <div class="footer-column">
+        <a href="../index.html" class="footer-logo">
+          <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
+        </a>
+        <p class="footer-description">
+          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="index.html"><i class="fas fa-blog"></i> Blog</a>
+          <a href="../pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="../pages/contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
+          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Legal -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Legal</h3>
+        <div class="footer-links">
+          <a href="../pages/privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="../pages/terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+          <a href="../pages/dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
+          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Column 4: Tools -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Our Tools</h3>
+        <div class="footer-links">
+          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
+          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
+          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
+          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 ImgNinja. All rights reserved. | Made by <a href="https://totalsolution.42web.io/" target="_blank">Total Solution</a></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
+  </footer>
+
+  <!-- Back to Top Script -->
+  <script>
+    // Back to top button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('visible');
+        } else {
+          backToTopButton.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when clicked
+      backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+  <!-- Scripts -->
+  <script src="../js/script.js"></script>
+  <script src="../js/blog.js"></script>
+</body>
+</html>
