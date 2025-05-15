@@ -68,7 +68,7 @@ ImgNinja/
 1. **Clone or Download:**
    - Download the repository or clone it using:
      ```
-     git clone <repo-url>
+     git clone https://github.com/akashprajapati1232/ImgNinja
      ```
 2. **Open `index.html`:**
    - Open `index.html` in your web browser. No build or server required.
