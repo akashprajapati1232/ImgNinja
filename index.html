@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Compressor - ImgNinja</title>
+  <title>ImgNinja - Free Online Image Tools | Compress, Resize & More</title>
+  <meta name="description" content="ImgNinja offers powerful, free online image tools including compression, resizing, and more. Optimize your images without losing quality.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/crop.css">
-  <link rel="stylesheet" href="css/edit.css">
+  <link rel="stylesheet" href="home.css">
   <!-- Add Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Add Font Awesome Icons -->
@@ -29,175 +29,383 @@
       <span class="bar"></span>
     </div>
     <ul class="nav-links">
+      <li><a href="image-compress.html"><i class="fas fa-image"></i> Image Compressor</a></li>
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="index.html"><i class="fas fa-image"></i> Image Compress</a></li>
-      <li><a href="file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
-      <li><a href="pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
       <li><a href="pages/about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="blog/index.html"><i class="fas fa-blog"></i> Blog</a></li>
     </ul>
   </nav>
 
   <!-- Main Content -->
-  <div class="container">
-    <div class="hero-section">
+  <div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-landing">
+      <div class="hero-background"></div>
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
       <div class="hero-content">
-       <h1>
-          <span class="pdf-title">Image Compressor</span>
-      </h1>
-        <p class="subtitle">Compress JPG, PNG, JPEG, WEBP, GIF, HEIF/HEIC, ICO, and SVG without losing quality.</p>
-        <p class="hero-description">Advanced compression technology that preserves image quality while reducing file size by up to 90%.</p>
-      </div>
-    </div>
-    <div class="upload-box" id="drop-area">
-      <div class="upload-icon">
-        <i class="fas fa-cloud-upload-alt"></i>
-      </div>
-      <input type="file" id="upload" accept="image/jpeg, image/png, image/jpg, image/webp, image/gif, image/heif, image/heic, image/x-icon, image/svg+xml, .heif, .heic, .ico, .svg">
-      <label for="upload" class="upload-label"><i class="fas fa-cloud-upload-alt"></i> Choose an Image</label>
-      <p class="drag-text">or drag and drop your image here</p>
-      <div class="upload-info">
-        <p class="formats"><i class="fas fa-file-image"></i> Supported Formats: JPG, JPEG, PNG, WEBP, GIF, HEIF/HEIC, ICO, SVG</p>
-        <p class="max-size"><i class="fas fa-weight-hanging"></i> Max File Size: 10MB</p>
-      </div>
-      <div id="image-preview"></div>
-      <!-- Image Details Integrated Here -->
-      <div id="image-details" class="details-card">
-        <div class="details-header">
-          <i class="fas fa-info-circle"></i> Image Details
-        </div>
-        <div class="details-content">
-          <p id="dimensions-px"><i class="fas fa-ruler-combined"></i> Dimensions: <span></span></p>
-          <p id="dimensions-mm"><i class="fas fa-ruler"></i> Dimensions: <span></span></p>
-          <p id="dimensions-cm"><i class="fas fa-ruler"></i> Dimensions: <span></span></p>
-          <p id="size-display"><i class="fas fa-database"></i> Size: <span></span></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Manual Compression Settings -->
-    <div class="settings-card">
-      <div class="settings-header">
-        <h3><i class="fas fa-sliders-h"></i> Compression Settings</h3>
-        <div class="settings-tabs">
-          <button class="settings-tab active tooltip" data-tab="quality">
-            <i class="fas fa-compress"></i> Quality
-            <span class="tooltip-text">Adjust compression quality</span>
-          </button>
-          <button class="settings-tab tooltip" data-tab="dimensions">
-            <i class="fas fa-arrows-alt"></i> Dimensions
-            <span class="tooltip-text">Resize image dimensions</span>
-          </button>
-          <button class="settings-tab tooltip" data-tab="size">
-            <i class="fas fa-file-archive"></i> Target Size
-            <span class="tooltip-text">Set specific file size</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="settings">
-        <div class="settings-panel active" id="quality-panel">
-          <div class="compression-level-container">
-            <div class="setting-label">
-              <label for="compression-level"><i class="fas fa-compress"></i> Compression Level:</label>
-            </div>
-            <div class="slider-container">
-              <div class="slider-track">
-                <div class="slider-fill"></div>
-                <input type="range" id="compression-level" min="0" max="100" value="70">
-                <div class="slider-thumb"></div>
+        <div class="hero-visual">
+          <div class="modern-logo">
+            <div class="logo-circle">
+              <div class="logo-inner">
+                <img src="assets/favicon-imgNinja.png" alt="ImgNinja" class="favicon-logo">
               </div>
-              <div class="compression-value-container">
-                <span id="compression-value">70%</span>
-              </div>
+              <div class="logo-ring"></div>
+              <div class="logo-ring-2"></div>
             </div>
           </div>
         </div>
-
-        <div class="settings-panel" id="dimensions-panel">
-          <div class="dimension-inputs">
-            <div class="setting">
-              <label for="width"><i class="fas fa-arrows-alt-h"></i> Width (px):</label>
-              <input type="number" id="width" placeholder="Auto" class="dimension-input">
-            </div>
-            <div class="aspect-ratio-link">
-              <i class="fas fa-link" title="Aspect ratio will be maintained"></i>
-            </div>
-            <div class="setting">
-              <label for="height"><i class="fas fa-arrows-alt-v"></i> Height (px):</label>
-              <input type="number" id="height" placeholder="Auto" class="dimension-input">
-            </div>
+        <h1 class="hero-title">
+          <span class="welcome-text">Welcome to </span><span class="brand-highlight">ImgNinja</span>
+        </h1>
+        <p class="hero-subtitle">Your Ultimate Image Optimization Toolkit</p>
+        <p class="hero-description">
+          Powerful, free online tools for all your image needs. Compress, resize, convert, and optimize images without losing quality - all in your browser with complete privacy.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Privacy</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">90%</div>
+            <div class="stat-label">Size Reduction</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">Free</div>
+            <div class="stat-label">Forever</div>
           </div>
         </div>
-
-        <div class="settings-panel" id="size-panel">
-          <div class="target-size-container">
-            <div class="setting">
-              <label for="target-size"><i class="fas fa-file-archive"></i> Target Size (KB):</label>
-              <input type="number" id="target-size" placeholder="Enter size in KB" class="dimension-input" min="1">
-            </div>
-          </div>
+        <div class="hero-cta">
+          <a href="image-compress.html" class="cta-button primary">
+            <i class="fas fa-rocket"></i>
+            Start Compressing Images
+          </a>
+          <a href="#features" class="cta-button secondary">
+            <i class="fas fa-arrow-down"></i>
+            Explore Features
+          </a>
         </div>
       </div>
-    </div>
-
-    <button id="compress-btn" class="action-button"><i class="fas fa-compress-arrows-alt"></i> Compress Image</button>
-
-    <div class="result-container">
-      <div id="preview" class="preview-container"></div>
-      <div class="result-info">
-        <p id="compressed-size-display"><i class="fas fa-file-archive"></i> <span></span></p>
-        <div class="action-buttons">
-          <a id="download-link" class="action-button" style="display: none;"><i class="fas fa-download"></i> Download Compressed Image</a>
-          <button id="new-image-btn" class="action-button secondary" style="display: none;"><i class="fas fa-redo-alt"></i> New Image</button>
-        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <h2 class="section-title">Our Powerful Tools</h2>
+        <p class="section-subtitle">Everything you need for image optimization and manipulation</p>
       </div>
-    </div>
 
-    <!-- How It Works Section -->
-    <div class="how-it-works">
-      <h2><i class="fas fa-cogs"></i> How It Works</h2>
-      <div class="steps-container">
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-upload"></i>
-            <div class="step-number">1</div>
-          </div>
-          <h3>Upload Your Image</h3>
-          <p>Select an image from your device or drag and drop it into the upload area. We support JPG, PNG, JPEG, WEBP, GIF, HEIF/HEIC, ICO, and SVG formats.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-sliders-h"></i>
-            <div class="step-number">2</div>
-          </div>
-          <h3>Adjust Settings</h3>
-          <p>Choose your desired compression level using the slider, specify dimensions (aspect ratio is automatically maintained), or set a target file size for your compressed image.</p>
-        </div>
-        <div class="step">
-          <div class="step-icon">
+      <div class="features-grid">
+        <!-- Live Feature - Image Compressor -->
+        <div class="feature-card live">
+          <div class="feature-icon">
             <i class="fas fa-compress-arrows-alt"></i>
-            <div class="step-number">3</div>
           </div>
-          <h3>Compress</h3>
-          <p>Click the "Compress Image" button to start the compression process. Our advanced algorithms will optimize your image while preserving quality.</p>
+          <div class="feature-content">
+            <h3 class="feature-title">Image Compressor</h3>
+            <p class="feature-description">Reduce image file sizes by up to 90% without losing quality. Supports JPG, PNG, WEBP, GIF, HEIF/HEIC, ICO, and SVG formats.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-check"></i> Lossless Compression</span>
+              <span class="highlight-tag"><i class="fas fa-check"></i> Multiple Formats</span>
+              <span class="highlight-tag"><i class="fas fa-check"></i> Fast Processing</span>
+            </div>
+            <a href="image-compress.html" class="feature-button live-button">
+              <i class="fas fa-play"></i> Use Now
+            </a>
+          </div>
+          <div class="live-badge">
+            <i class="fas fa-circle"></i> Live
+          </div>
         </div>
-        <div class="step">
-          <div class="step-icon">
-            <i class="fas fa-download"></i>
-            <div class="step-number">4</div>
+
+        <!-- Upcoming Features -->
+        <div class="feature-card upcoming">
+          <div class="feature-icon">
+            <i class="fas fa-exchange-alt"></i>
           </div>
-          <h3>Download</h3>
-          <p>Once compression is complete, preview the result and download your optimized image. It's that simple!</p>
+          <div class="feature-content">
+            <h3 class="feature-title">File Converter</h3>
+            <p class="feature-description">Convert between different image formats seamlessly. Transform JPG to PNG, WEBP to JPG, and many more format combinations.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Batch Conversion</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Multiple Formats</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Quality Preservation</span>
+            </div>
+            <button class="feature-button upcoming-button" disabled>
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
+          <div class="upcoming-badge">
+            <i class="fas fa-clock"></i> Soon
+          </div>
+        </div>
+
+        <div class="feature-card upcoming">
+          <div class="feature-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">PDF Tools</h3>
+            <p class="feature-description">Comprehensive PDF toolkit including merge, split, compress, and convert functionalities for all your PDF needs.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-clock"></i> PDF Merge</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> PDF Split</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> PDF Compress</span>
+            </div>
+            <button class="feature-button upcoming-button" disabled>
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
+          <div class="upcoming-badge">
+            <i class="fas fa-clock"></i> Soon
+          </div>
+        </div>
+
+        <div class="feature-card upcoming">
+          <div class="feature-icon">
+            <i class="fas fa-crop-alt"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Image Resizer</h3>
+            <p class="feature-description">Resize images to specific dimensions while maintaining aspect ratio and quality. Perfect for social media and web optimization.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Custom Dimensions</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Aspect Ratio Lock</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Preset Sizes</span>
+            </div>
+            <button class="feature-button upcoming-button" disabled>
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
+          <div class="upcoming-badge">
+            <i class="fas fa-clock"></i> Soon
+          </div>
+        </div>
+
+        <div class="feature-card upcoming">
+          <div class="feature-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Image Editor</h3>
+            <p class="feature-description">Advanced image editing capabilities including filters, adjustments, cropping, and enhancement tools.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Filters & Effects</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Color Adjustment</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Crop & Rotate</span>
+            </div>
+            <button class="feature-button upcoming-button" disabled>
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
+          <div class="upcoming-badge">
+            <i class="fas fa-clock"></i> Soon
+          </div>
+        </div>
+
+        <div class="feature-card upcoming">
+          <div class="feature-icon">
+            <i class="fas fa-images"></i>
+          </div>
+          <div class="feature-content">
+            <h3 class="feature-title">Background Remover</h3>
+            <p class="feature-description">AI-powered background removal tool that automatically detects and removes backgrounds from your images.</p>
+            <div class="feature-highlights">
+              <span class="highlight-tag"><i class="fas fa-clock"></i> AI-Powered</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> Automatic Detection</span>
+              <span class="highlight-tag"><i class="fas fa-clock"></i> High Precision</span>
+            </div>
+            <button class="feature-button upcoming-button" disabled>
+              <i class="fas fa-clock"></i> Coming Soon
+            </button>
+          </div>
+          <div class="upcoming-badge">
+            <i class="fas fa-clock"></i> Soon
+          </div>
         </div>
       </div>
-      <div class="tech-info">
-        <h3><i class="fas fa-microchip"></i> Our Technology</h3>
-        <p>ImgNinja uses advanced compression algorithms that intelligently analyze your images to reduce file size while maintaining visual quality. Our technology works entirely in your browser - your images are never uploaded to any server, ensuring complete privacy and security.</p>
-        <div class="blog-promo">
-          <p><i class="fas fa-lightbulb"></i> Want to learn more about image compression? Check out our <a href="blog/index.html">blog</a> for tips, tutorials, and best practices.</p>
+    </section>
+
+    <!-- Why Choose ImgNinja Section -->
+    <section class="why-choose-section">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose ImgNinja?</h2>
+        <p class="section-subtitle">The ultimate solution for all your image optimization needs</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="benefit-title">100% Privacy</h3>
+          <p class="benefit-description">All processing happens in your browser. Your images never leave your device, ensuring complete privacy and security.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="benefit-title">Lightning Fast</h3>
+          <p class="benefit-description">Advanced algorithms provide instant results without compromising quality. No waiting, no delays.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <h3 class="benefit-title">Completely Free</h3>
+          <p class="benefit-description">All tools are free to use with no hidden costs, watermarks, or limitations. Professional results at no cost.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 class="benefit-title">Works Everywhere</h3>
+          <p class="benefit-description">Responsive design works perfectly on desktop, tablet, and mobile devices. No app installation required.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3 class="benefit-title">Premium Quality</h3>
+          <p class="benefit-description">Advanced compression technology maintains image quality while achieving maximum file size reduction.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="benefit-title">Easy to Use</h3>
+          <p class="benefit-description">Intuitive interface designed for both beginners and professionals. Get results in just a few clicks.</p>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+      <div class="section-header">
+        <h2 class="section-title">Latest from Our Blog</h2>
+        <p class="section-subtitle">Expert tips, tutorials, and insights on image optimization</p>
+      </div>
+
+      <div class="blog-preview-grid">
+        <!-- Featured Blog Post -->
+        <div class="blog-featured-card">
+          <div class="blog-image">
+            <img src="assets/blog/webp-vs-jpg-png.jpg" alt="WebP vs JPG vs PNG: Which Image Format Is Best?" width="600" height="300">
+            <div class="blog-category-badge">Featured</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-category">Guides</span>
+              <span class="blog-date"><i class="far fa-calendar-alt"></i> May 15, 2025</span>
+              <span class="blog-reading-time"><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h3 class="blog-title">WebP vs JPG vs PNG: Which Image Format Is Best?</h3>
+            <p class="blog-excerpt">Discover the pros and cons of different image formats and learn which one is best for your specific use case. This comprehensive guide covers compression ratios, quality, browser support, and more.</p>
+            <a href="blog/posts/webp-vs-jpg-png.html" class="blog-read-more">
+              Read Full Article <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Recent Blog Posts -->
+        <div class="blog-recent-posts">
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/blog/optimize-images-for-web.jpg" alt="How to Optimize Images for Web" width="300" height="180">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-category">Tutorials</span>
+                <span class="blog-date">May 10, 2025</span>
+              </div>
+              <h4 class="blog-card-title">How to Optimize Images for Web Without Losing Quality</h4>
+              <p class="blog-card-excerpt">Learn the best techniques to reduce image file sizes while maintaining visual quality.</p>
+              <a href="blog/posts/optimize-images-for-web.html" class="blog-card-link">Read More</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/blog/image-seo-best-practices.jpg" alt="Image SEO Best Practices" width="300" height="180">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-category">Tips & Tricks</span>
+                <span class="blog-date">May 5, 2025</span>
+              </div>
+              <h4 class="blog-card-title">Image SEO Best Practices for Better Rankings</h4>
+              <p class="blog-card-excerpt">Boost your website's SEO with these essential image optimization techniques.</p>
+              <a href="blog/posts/image-seo-best-practices.html" class="blog-card-link">Read More</a>
+            </div>
+          </div>
+
+          <div class="blog-card">
+            <div class="blog-card-image">
+              <img src="assets/blog/heic-to-jpg-conversion.jpg" alt="HEIC to JPG Conversion" width="300" height="180">
+            </div>
+            <div class="blog-card-content">
+              <div class="blog-meta">
+                <span class="blog-category">Guides</span>
+                <span class="blog-date">April 28, 2025</span>
+              </div>
+              <h4 class="blog-card-title">HEIC to JPG: How to Convert iPhone Photos</h4>
+              <p class="blog-card-excerpt">A complete guide to converting HEIC images from your iPhone to JPG format.</p>
+              <a href="blog/posts/heic-to-jpg-conversion.html" class="blog-card-link">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-cta">
+        <a href="blog/index.html" class="blog-view-all-btn">
+          <i class="fas fa-blog"></i>
+          View All Articles
+        </a>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Optimize Your Images?</h2>
+        <p class="cta-description">Join thousands of users who trust ImgNinja for their image optimization needs</p>
+        <div class="cta-buttons">
+          <a href="image-compress.html" class="cta-button primary large">
+            <i class="fas fa-rocket"></i>
+            Get Started Now
+          </a>
+          <a href="blog/index.html" class="cta-button secondary large">
+            <i class="fas fa-book"></i>
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -209,14 +417,9 @@
           <img src="assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
         </a>
         <p class="footer-description">
-          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+          ImgNinja provides powerful, free online tools for image compression, helping you optimize your images without sacrificing quality.
         </p>
-        <div class="social-links">
-          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+
       </div>
 
       <!-- Column 2: Quick Links -->
@@ -227,7 +430,6 @@
           <a href="blog/index.html"><i class="fas fa-blog"></i> Blog</a>
           <a href="pages/about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
           <a href="pages/contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
-          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
         </div>
       </div>
 
@@ -246,11 +448,8 @@
       <div class="footer-column">
         <h3 class="footer-heading">Our Tools</h3>
         <div class="footer-links">
-          <a href="index.html"><i class="fas fa-image"></i> Image Compress</a>
-          <a href="pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
-          <a href="file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
-          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
-          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+          <a href="image-compress.html"><i class="fas fa-image"></i> Image Compressor</a>
+          <a href="image-compress.html"><i class="fas fa-crop-alt"></i> Image Resizer</a>
         </div>
       </div>
 
@@ -290,16 +489,7 @@
     });
   </script>
 
-  <!-- Add Cropper.js library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
-
-  <!-- Add libheif.js for HEIF/HEIC support -->
-  <script src="https://unpkg.com/libheif-js@1.10.0/dist/libheif.js"></script>
-
-  <!-- App Scripts -->
-  <script src="js/script.js"></script>
-  <script src="js/crop.js"></script>
-  <script src="js/edit.js"></script>
+  <!-- Home Page Scripts -->
+  <script src="home.js"></script>
 </body>
 </html>

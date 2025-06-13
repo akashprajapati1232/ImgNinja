@@ -301,19 +301,7 @@
       gap: 8px;
     }
 
-    .back-to-top {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--highlight-color);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-    }
 
-    .back-to-top:hover {
-      transform: translateY(-3px);
-    }
 
     /* Print Button */
     .print-button {
@@ -497,11 +485,10 @@
       <span class="bar"></span>
     </div>
     <ul class="nav-links">
+      <li><a href="../image-compress.html"><i class="fas fa-image"></i> Image Compressor</a></li>
       <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="../index.html"><i class="fas fa-image"></i> Image Compress</a></li>
-      <li><a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a></li>
-      <li><a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a></li>
       <li><a href="about-us.html"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a></li>
     </ul>
   </nav>
 
@@ -655,14 +642,9 @@
           <img src="../assets/logo-imgNinja.png" alt="ImgNinja Logo" width="200" height="110">
         </a>
         <p class="footer-description">
-          ImgNinja provides powerful, free online tools for image and document compression, helping you optimize your files without sacrificing quality.
+          ImgNinja provides powerful, free online tools for image compression, helping you optimize your images without sacrificing quality.
         </p>
-        <div class="social-links">
-          <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+
       </div>
 
       <!-- Column 2: Quick Links -->
@@ -673,7 +655,6 @@
           <a href="../blog/index.html"><i class="fas fa-blog"></i> Blog</a>
           <a href="about-us.html"><i class="fas fa-info-circle"></i> About Us</a>
           <a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a>
-          <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
         </div>
       </div>
 
@@ -684,7 +665,7 @@
           <a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
           <a href="terms-conditions.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
           <a href="dmca.html"><i class="fas fa-copyright"></i> DMCA</a>
-          <a href="#"><i class="fas fa-cookie"></i> Cookie Policy</a>
+          <a href="privacy-policy.html"><i class="fas fa-cookie"></i> Cookie Policy</a>
         </div>
       </div>
 
@@ -692,11 +673,8 @@
       <div class="footer-column">
         <h3 class="footer-heading">Our Tools</h3>
         <div class="footer-links">
-          <a href="../index.html"><i class="fas fa-image"></i> Image Compress</a>
-          <a href="../pdf-compressor.html"><i class="fas fa-file-pdf"></i> PDF Compress</a>
-          <a href="../file-converter.html"><i class="fas fa-file-alt"></i> File Converter</a>
-          <a href="#"><i class="fas fa-crop-alt"></i> Image Resizer</a>
-          <a href="#"><i class="fas fa-object-group"></i> Image Editor</a>
+          <a href="../image-compress.html"><i class="fas fa-image"></i> Image Compress</a>
+          <a href="../image-compress.html"><i class="fas fa-crop-alt"></i> Image Resizer</a>
         </div>
       </div>
 
@@ -714,7 +692,7 @@
   <script>
     // Back to top button functionality
     document.addEventListener('DOMContentLoaded', function() {
-      const backToTopButton = document.querySelector('.back-to-top');
+      const backToTopButton = document.querySelector('footer .back-to-top');
 
       // Show/hide button based on scroll position
       window.addEventListener('scroll', function() {

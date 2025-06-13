@@ -441,11 +441,6 @@
           window.addCropIconToImage();
         }
 
-        // Add edit icon to the image
-        if (window.addEditIconToImage) {
-          window.addEditIconToImage();
-        }
-
         // Display image details
         const widthPx = img.width;
         const heightPx = img.height;
@@ -767,7 +762,7 @@
 
     // Update download link
     downloadLink.href = compressedUrl;
-    downloadLink.download = `compressed_${fileName.replace(/\.[^/.]+$/, '')}.${extension}`; // Use appropriate extension
+    downloadLink.download = `compress_by_imgninja_${fileName.replace(/\.[^/.]+$/, '')}.${extension}`; // Use appropriate extension
     downloadLink.style.display = 'inline-block';
     downloadLink.classList.add('active'); // Enable download link
 
