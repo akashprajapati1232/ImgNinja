@@ -183,14 +183,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Documentation** - Check our [Wiki](../../wiki)
 - **Issues** - Report bugs on [GitHub Issues](../../issues)
 - **Discussions** - Join [GitHub Discussions](../../discussions)
-- **Email** - Contact us at support@imgninja.com
+- **Email** - Contact us at akashprajapati1232@gmail.com
 
 ---
 
 <div align="center">
   <p>Made with ❤️ by the ImgNinja Team</p>
   <p>
-    <a href="https://imgninja.com">Website</a> •
+    <a href="https://imgninja.in">Website</a> •
     <a href="../../issues">Report Bug</a> •
     <a href="../../discussions">Request Feature</a>
   </p>
