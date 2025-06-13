@@ -9,8 +9,7 @@
 
 ImgNinja is a powerful, free online image optimization toolkit that works entirely in your browser. Compress, resize, and optimize images without losing quality - all while maintaining complete privacy and security.
 
-![ImgNinja Hero](assets/logo-imgNinja.png)
-![ImgNinja Preview](assets/images/Preview.jpeg)
+![ImgNinja Hero](assets/Preview.jpeg)
 
 ## ✨ Features
 
